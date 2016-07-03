@@ -19,13 +19,15 @@ for iter = 1:num_iters
 
 %thetaj = thetaj - alpha/m * sum(h(xi) - yi)*xi
 
-
-
+	error = sum(X*theta-y)*X(iter);
+	theta(iter) = theta(iter) - (m/alpha)*error;
 
 
     % ============================================================
 
     % Save the cost J in every iteration    
+    
+    theta
     J_history(iter) = computeCost(X, y, theta);
 
 end
